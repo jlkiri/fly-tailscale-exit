@@ -20,8 +20,9 @@ ip6tables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
     #--tun=userspace-networking
     #--socks5-server=localhost:1055
 
+
 /app/tailscale up \
-    --authkey=${TAILSCALE_AUTH_KEY} \
+    --auth-key=${TAILSCALE_AUTH_KEY} \
     --hostname=fly-${FLY_REGION} \
     --advertise-exit-node #\
     #--advertise-tags=tag:fly-exit # requires ACL tagOwners
